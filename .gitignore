@@ -1,0 +1,33 @@
+*.class
+*.log
+
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+libexec/
+src_managed/
+project/boot/
+project/plugins/project/
+
+.scala_dependencies
+.worksheet
+
+*.iml
+
+## Directory-based project format:
+.idea/
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+/RUNNING_PID
