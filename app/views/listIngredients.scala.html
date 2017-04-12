@@ -1,0 +1,13 @@
+@(ingredients: Seq[Ingredient])
+
+@main("List ingredients") {
+  @if(ingredients.isEmpty) {
+    <h3>No Ingredients available but you can <a href="@routes.IngredientsController.showCreateForm()">create one</a></h3>
+  } else {
+    <ul>
+    @for(ingredient <- ingredients) {
+      <li>@ingredient.name</li>
+    }
+    </ul>
+  }
+}

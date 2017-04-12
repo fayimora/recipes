@@ -4,6 +4,7 @@ import javax.inject.Inject
 
 import forms.CreateIngredientForm
 import models.Ingredient
+import play.api.libs.concurrent.Execution.Implicits._
 import play.api.mvc.{Action, Controller}
 import services.IngredientService
 
@@ -32,5 +33,9 @@ class IngredientsController @Inject()(ingredientService: IngredientService) exte
         Future.successful(Redirect(routes.IngredientsController.showCreateForm()).flashing("info" -> "Ingredient created!"))
       }
     )
+  }
+
+  def list = Action.async { implicit request =>
+    ingredientService.all().map(ingredients => Ok(views.html.listIngredients(ingredients)))
   }
 }
