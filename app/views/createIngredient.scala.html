@@ -4,6 +4,9 @@
   <h2>Create a new Ingredient</h2>
   <div>
     <p>@flash.get("info")</p>
+    @if(form.hasErrors) {
+      <p>There were errors on your form</p>
+    }
   </div>
   <form action="#" method="post">
     Name: <input type="text" name="name">
