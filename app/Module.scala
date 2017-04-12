@@ -1,6 +1,7 @@
 import com.google.inject.AbstractModule
 import models.daos.{DefaultIngredientDAO, DefaultRecipeDAO, IngredientDAO, RecipeDAO}
 import net.codingwell.scalaguice.ScalaModule
+import services.{DefaultIngredientService, DefaultRecipeService, IngredientService, RecipeService}
 
 
 /**
@@ -18,6 +19,8 @@ class Module extends AbstractModule with ScalaModule {
   override def configure() = {
     bind[RecipeDAO].to[DefaultRecipeDAO]
     bind[IngredientDAO].to[DefaultIngredientDAO]
+    bind[RecipeService].to[DefaultRecipeService]
+    bind[IngredientService].to[DefaultIngredientService]
   }
 
 }
