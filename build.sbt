@@ -14,3 +14,4 @@ libraryDependencies ++= Seq(
   "net.codingwell" %% "scala-guice" % "4.1.0"
 )
 
+herokuAppName in Compile := "whispering-refuge-50759"
