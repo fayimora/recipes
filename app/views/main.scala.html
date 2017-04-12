@@ -16,7 +16,26 @@
         <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
     </head>
     <body>
-        @* And here's where we render the `Html` object containing
+      <ul>
+        <li><a href="@routes.HomeController.index()">Home</a></li>
+        <li>Recipes
+          <ul>
+            <li><a href="#">Create Recipe</a></li>
+            <li><a href="#">Show Recipes</a></li>
+          </ul>
+        </li>
+        <li>Ingredients
+          <ul>
+            <li><a href="@routes.IngredientsController.showCreateForm()">Create Ingredient</a></li>
+            <li><a href="@routes.IngredientsController.submit()">Show Ingredients</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <br>
+      <hr>
+
+      @* And here's where we render the `Html` object containing
          * the page content. *@
         @content
     </body>

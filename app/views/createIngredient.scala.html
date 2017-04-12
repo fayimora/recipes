@@ -1,0 +1,18 @@
+@(form: Form[forms.CreateIngredientForm.Data])(implicit flash: Flash)
+
+@main("Create Ingredient") {
+  <h2>Create a new Ingredient</h2>
+  <div>
+    <p>@flash.get("info")</p>
+  </div>
+  <form action="#" method="post">
+    Name: <input type="text" name="name">
+      <br>
+    Description: <input type="textarea" name="description">
+      <br>
+    Quantifier: <input type="text" name="quantifier">
+      <br>
+
+      <input type="submit" value="Submit">
+  </form>
+}
